@@ -10,6 +10,11 @@ https://stackoverflow.com/questions/11584251/calling-constructor-of-another-clas
 - ... you do it in the "initializer list"
 --> no copying of values happens
 
+Note:
+- when passing parameters, c++ sadly has no named parameters like python
+- so you always have to respect the order
+- a workarround is to provide a arguments struct
+
 
 Two things can ONLY be done with the list!!!
 1.) Non-static const data members:
@@ -19,12 +24,43 @@ Two things can ONLY be done with the list!!!
 - need to be initialited by initializer list
 - can't have default values!
 
+Initialization style
+--------------------
+https://stackoverflow.com/questions/18222926/why-is-list-initialization-using-curly-braces-better-than-the-alternatives
+int i =  var; //is bad style since implicit conversion might happen
+int i {var}; //is the same, but saver because it will give a compiler error if conversion happens
+auto i = var; //is ok since the type will be determined automatically
+
+
+
 
 ----------------------------------------------
 lvalue = object that occupies identifyiable location in memory
 rvalue = opposite of lvalue
 
 *********************************************/
+
+	class MebmerInitialization
+	{
+		void properInitializationStyle()
+		{
+			auto val = 7.9;
+			auto val2 = 1025;
+
+			int x2 = val; // if val==7.9, x2 becomes 7 (bad)
+			char c2 = val2; // if val2==1025, c2 becomes 1 (bad)
+
+			//int x3{ val }; // error: possible truncation (good)
+			//char c3{ val2 }; // error: possible narrowing (good)
+
+			char c4{ 24 }; // OK: 24 can be represented exactly as a char (good)
+			//char c5{ 264 }; // error (assuming 8-bit chars): 264 cannot be 
+							// represented as a char (good)
+
+			//int x4{ 2.0 }; // error: no double to int value conversion (good)
+		}
+	};
+
 
 
 	class ID

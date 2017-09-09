@@ -28,7 +28,7 @@ namespace exercise_interview
 		}
 
 		//assigment operator
-		void operator = (const Mstring& m)  //const ref = readonly reference, no cost of copying
+		void operator = (const Mstring& m)  //const ref = readonly reference, no cost of copying //reference is const, not content (content should be as well i guess)
 		{
 			name = m.name;
 		}

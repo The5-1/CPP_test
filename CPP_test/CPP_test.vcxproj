@@ -115,14 +115,19 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="exercise_forLoops_Functors.h" />
     <ClInclude Include="exercise_interview.h" />
     <ClInclude Include="exercise_lambdas.h" />
+    <ClInclude Include="exercise_initializerList.h" />
+    <ClInclude Include="exercise_Memory_Pointers.h" />
+    <ClInclude Include="exercise_threading.h" />
     <ClInclude Include="include_containers.h" />
     <ClInclude Include="include_default.h" />
     <ClInclude Include="include_GL.h" />
     <ClInclude Include="include_GUI.h" />
     <ClInclude Include="include_IO.h" />
     <ClInclude Include="include_math.h" />
+    <ClInclude Include="_StyleConventions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

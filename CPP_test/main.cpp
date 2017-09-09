@@ -7,7 +7,11 @@
 //#include "include_GUI.h"
 
 #include "exercise_interview.h"
+#include "exercise_initializerList.h"
 #include "exercise_lambdas.h"
+#include "exercise_Memory_Pointers.h"
+#include "exercise_forLoops_Functors.h"
+#include "exercise_threading.h"
 
 GLuint BuildShaderProgram(const char *vsPath, const char *fsPath);
 GLuint CreateShader(GLenum eShaderType, const char *strShaderFile);
@@ -15,8 +19,10 @@ GLuint CreateShader(GLenum eShaderType, const char *strShaderFile);
 int main(int argc, char *args[])
 {
 	exercise_interview::testMstring();
+	exercise_forLoops_Functors::test();
 	exercise_lambdas::test();
-
+	exercise_Memory_Pointers::test();
+	exercise_threading::test();
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 		return 1;

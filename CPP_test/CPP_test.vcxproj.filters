@@ -47,5 +47,20 @@
     <ClInclude Include="exercise_interview.h">
       <Filter>Header Files\CppExercises</Filter>
     </ClInclude>
+    <ClInclude Include="exercise_initializerList.h">
+      <Filter>Header Files\CppExercises</Filter>
+    </ClInclude>
+    <ClInclude Include="_StyleConventions.h">
+      <Filter>Header Files\CppExercises</Filter>
+    </ClInclude>
+    <ClInclude Include="exercise_threading.h">
+      <Filter>Header Files\CppExercises</Filter>
+    </ClInclude>
+    <ClInclude Include="exercise_Memory_Pointers.h">
+      <Filter>Header Files\CppExercises</Filter>
+    </ClInclude>
+    <ClInclude Include="exercise_forLoops_Functors.h">
+      <Filter>Header Files\CppExercises</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
