@@ -13,8 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\CppExercises">
+    <Filter Include="Header Files\Exercises_Cpp">
       <UniqueIdentifier>{1769d152-a928-4ea9-be32-fb2e2f84064d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Exercises_Architecture">
+      <UniqueIdentifier>{61976162-1edb-4337-8d81-e0114e50003c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,25 +45,34 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="exercise_lambdas.h">
-      <Filter>Header Files\CppExercises</Filter>
+      <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
     <ClInclude Include="exercise_interview.h">
-      <Filter>Header Files\CppExercises</Filter>
+      <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
     <ClInclude Include="exercise_initializerList.h">
-      <Filter>Header Files\CppExercises</Filter>
+      <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
     <ClInclude Include="_StyleConventions.h">
-      <Filter>Header Files\CppExercises</Filter>
+      <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
     <ClInclude Include="exercise_threading.h">
-      <Filter>Header Files\CppExercises</Filter>
+      <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
     <ClInclude Include="exercise_Memory_Pointers.h">
-      <Filter>Header Files\CppExercises</Filter>
+      <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
     <ClInclude Include="exercise_forLoops_Functors.h">
-      <Filter>Header Files\CppExercises</Filter>
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="exercise_templates.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Exercises_Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files\Exercises_Architecture</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

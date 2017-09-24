@@ -115,11 +115,14 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="exercise_forLoops_Functors.h" />
     <ClInclude Include="exercise_interview.h" />
     <ClInclude Include="exercise_lambdas.h" />
     <ClInclude Include="exercise_initializerList.h" />
     <ClInclude Include="exercise_Memory_Pointers.h" />
+    <ClInclude Include="exercise_templates.h" />
     <ClInclude Include="exercise_threading.h" />
     <ClInclude Include="include_containers.h" />
     <ClInclude Include="include_default.h" />
