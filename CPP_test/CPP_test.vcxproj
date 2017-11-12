@@ -116,7 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
+    <ClInclude Include="Eigen_Test.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="EventQueue.h" />
     <ClInclude Include="exercise_forLoops_Functors.h" />
     <ClInclude Include="exercise_interview.h" />
     <ClInclude Include="exercise_lambdas.h" />

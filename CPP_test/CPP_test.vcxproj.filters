@@ -74,5 +74,11 @@
     <ClInclude Include="Component.h">
       <Filter>Header Files\Exercises_Architecture</Filter>
     </ClInclude>
+    <ClInclude Include="EventQueue.h">
+      <Filter>Header Files\Exercises_Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="Eigen_Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

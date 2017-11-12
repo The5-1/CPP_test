@@ -146,8 +146,8 @@ weak_ptr:
 		Wrap a stack allocated object arround your heap one
 		so your destructor gets called when the stack object leaves scope.
 		======================================
-
 		---> smart pointers do this for you!
+		======================================
 		*/
 
 		class OpenFile {
