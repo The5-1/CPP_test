@@ -19,7 +19,9 @@ But NOT pointer members!
 - smart pointers take care of such pointer objects and delte them when nothing points to them anymore
 
 //https://stackoverflow.com/questions/10836591/class-members-and-explicit-stack-heap-allocation
+Stack VS Heap:
 Classes: Normal Members and Pointer Members:
+- all class members are automatic! (deleted when object is destroyed)
 - normal members are always in the same memory as their owner
 - pointer members are not owned by the class thus are on the heap
 - normal members are deleted when the owner is deleted
@@ -64,7 +66,19 @@ weak_ptr:
 - e.g. for a cache: keep an object arround for access, but don't force its existence
 
 
+https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap
+More detail on stack and heap
+Stack:
+- fixed memory per threat
+- function allocates a block
+- the block is cleared at the end of a function
+- LIFO/Stack of functions and their variables
+- top one is processed and cleared
+- stack is faster because of the fixed access pattern
 
+Heap:
+- no allocation pattern
+- you have to take care of it yourself
 
 
 **************************************************/
