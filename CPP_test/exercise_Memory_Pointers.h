@@ -45,6 +45,20 @@ RAII Idea:
 SmartPointers:
 - wrap a RAII object arround heap-allocated resources
 
+
+Declare unique_ptr without setting it & later turn a pointer into a unique ptr:
+https://stackoverflow.com/questions/16894400/how-to-declare-stdunique-ptr-and-what-is-the-use-of-it
+	unique_ptr<int> p;
+	p = make_unique<int>(42);
+
+Returning unique_ptr:
+https://stackoverflow.com/questions/4316727/returning-unique-ptr-from-functions
+std::unique_ptr<int> get_unique() 
+{
+	auto ptr = std::unique_ptr<int>{new int{2}}; // <- 1
+	return ptr; // <- 2, moved into the to be returned unique_ptr
+}
+
 https://msdn.microsoft.com/en-us/library/hh279674.aspx#Kinds%20of%20Smart%20Pointers
 unique_ptr:
 - allows only one unique_ptr to the object
