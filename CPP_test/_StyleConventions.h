@@ -2,6 +2,10 @@
 
 /**********************************************
 
+OOP Terminology
+https://stackoverflow.com/questions/16751269/oop-terminology-class-attribute-property-field-data-member
+
+
 https://google.github.io/styleguide/cppguide.html#Structs_vs._Classes
 Struct VS Class
 ===============
