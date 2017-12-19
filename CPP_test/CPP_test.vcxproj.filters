@@ -80,5 +80,11 @@
     <ClInclude Include="Eigen_Test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="exercise_static_extern_global.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="exercise_inlude_circularDependency.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
