@@ -86,5 +86,11 @@
     <ClInclude Include="exercise_inlude_circularDependency.h">
       <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
+    <ClInclude Include="exercise_pointer_VS_reference.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS_OOP_vs_DOD.h">
+      <Filter>Header Files\Exercises_Architecture</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
