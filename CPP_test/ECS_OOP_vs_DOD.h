@@ -30,6 +30,11 @@ http://t-machine.org/index.php/2014/03/08/data-structures-for-entity-systems-con
 --  1 component type * 20k component instances * 50 variables * 8byte each = only 8MB per component * 150 compnent types = only 500MB	--
 ------------------------------------------------------------------------------------------------------------------------------------------
 
+Ownership and smart_ptrs
+------------------------
+https://gamedev.stackexchange.com/questions/49525/attribute-ownership-in-entity-component-systems
+
+
 http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/
 
 
