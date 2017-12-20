@@ -1,15 +1,42 @@
 #pragma once
 /******************************************
 
-//Great summary!!!
-//compares different approaches with sample code
+//Good summary with sample code
 https://github.com/CppCon/CppCon2015/blob/master/Tutorials/Implementation%20of%20a%20component-based%20entity%20system%20in%20modern%20C%2B%2B/Implementation%20of%20a%20component-based%20entity%20system%20in%20modern%20C%2B%2B%20-%20Vittorio%20Romeo%20-%20CppCon%202015.pdf
-
-Video with live coding!!!
 https://www.youtube.com/watch?v=NTWSeQtHZ9M
-
-Code:
 https://github.com/CppCon/CppCon2015/tree/master/Tutorials/Implementation%20of%20a%20component-based%20entity%20system%20in%20modern%20C%2B%2B/Source%20Code
+
+
+//About performance and Cache
+http://t-machine.org/index.php/2014/03/08/data-structures-for-entity-systems-contiguous-memory/
+------------------------------------------------------------------------------------------------------------------------------------------
+--  !!! a Approach using maps/dictionaries, like in the OOP composition is slow-er but not "slow" !!!									--
+------------------------------------------------------------------------------------------------------------------------------------------
+--  std::vector is CONTINUOUS! You just need to acess it with .at(i) rather than directly pointing to it.                               --
+------------------------------------------------------------------------------------------------------------------------------------------
+--  "To recap: even in 2011, Android phones could run realtime 30 FPS games using Maps. It’s slow – but fast enough for simple games"	--
+------------------------------------------------------------------------------------------------------------------------------------------
+--  Entity Processors will process continous data in the order it exists in RAM															--
+--  So the game objects must be able to ignore the order in which they are processed													--
+--  The stuff that happens every frame needs to be as continuous as possible, like Transformations										--
+--  Cross references, like packing a item entity into a inventory, happen more rarely and are not that crucial							--
+--  It is ok to just optimize cache for the Processor/Components that takes up the most CPU-time!										--
+------------------------------------------------------------------------------------------------------------------------------------------
+--  Components should be almost Atomic !																								--
+--  A Bomberman game has about 12 Component types																						--
+--  Dungeon Siege 2003 used about 150 Component types																					--
+--  150 comonents, 10k combinations, 100k instances at runtime																			--
+--  RAM itself is not the big isssue: Assuming 150 big component types with thousands of instances:										--
+--  1 component type * 20k component instances * 50 variables * 8byte each = only 8MB per component * 150 compnent types = only 500MB	--
+------------------------------------------------------------------------------------------------------------------------------------------
+
+http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/
+
+
+
+
+//Dungeon Siege 2003
+http://gamedevs.org/uploads/data-driven-game-object-system.pdf
 
 ******************************************/
 
@@ -23,7 +50,7 @@ https://github.com/CppCon/CppCon2015/tree/master/Tutorials/Implementation%20of%2
 // Components store data and handle logic
 //-------------------
 //++ flexible
-//-- cache unfriendly
+//-- cache unfriendly (still fast enough for normal games!)
 //-- runtime overhead due to runtime Polymorphism
 namespace ECS_OOP_composition
 {

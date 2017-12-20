@@ -121,7 +121,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EventQueue.h" />
     <ClInclude Include="exercise_forLoops_Functors.h" />
-    <ClInclude Include="exercise_inlude_circularDependency.h" />
+    <ClInclude Include="exercise_inlude_forward_typedef.h" />
     <ClInclude Include="exercise_interview.h" />
     <ClInclude Include="exercise_lambdas.h" />
     <ClInclude Include="exercise_initializerList.h" />
