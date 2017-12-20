@@ -2,6 +2,9 @@
 namespace exercise_inheritance_polymorphism
 {
 	//https://stackoverflow.com/questions/1563765/use-of-public-in-a-derived-class-declaration
+	//nothing = D "makes use of" Base (inherited members turn private)
+	//public = D "is a" Base --> enables casting
+
 
 	class B { };
 
