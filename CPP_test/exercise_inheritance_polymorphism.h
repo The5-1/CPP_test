@@ -17,7 +17,7 @@ namespace exercise_inheritance_polymorphism
 
 	void test()
 	{
-		foo(new D1); //conversion to inacessible base class
+		foo(new D1); //ERROR: conversion to inacessible base class
 		foo(new D2); //this works
 	}
 
@@ -27,7 +27,7 @@ namespace exercise_inheritance_polymorphism
 //https://www.gamedev.net/forums/topic/518288-cwierd-problem---abstract-function-is-unresolved-external-symbol/?do=findComment&comment=4367433
 //Calling virtual functions in the constructor / destructor is usually a bad idea. Because you're calling the unload() function from your destructor,
 //the vtable would have been destroyed, meaning the only version function you can call would be that in SIResource - which is pure virtual and therefore undefined.
-
+//https://stackoverflow.com/questions/9529083/calling-pure-virtual-function
 
 
 }

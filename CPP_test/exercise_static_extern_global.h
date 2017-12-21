@@ -1,5 +1,21 @@
 #pragma once
 
+/******************************************************************************
+**** LNK2001 Unresolved External Symbol [member variable of static class]  ****
+******************************************************************************/
+/* >>>>> The definition for a static data member shall appear in a namespace scope enclosing the member’s class definition. <<<<< */
+
+//in IComponentProcessor.h we __declare__
+class IComponentProcessor
+{
+public:
+	static std::vector<IComponent*> mComponentPointers;
+}
+
+//then in the IComponentProcessor.cpp you MUST __define__ (and should __initialize__) it!
+std::vector<IComponent*> IComponentProcessor::mComponentPointers = std::vector<IComponent*>();
+
+
 //Global VS Static VS Sigleton, why is none of it really good?
 //https://stackoverflow.com/questions/365261/ok-global-variable-is-condemned-singleton-is-despised-whats-the-alternative
 //--> there is nothing wrong with globals if it fits the purpose
