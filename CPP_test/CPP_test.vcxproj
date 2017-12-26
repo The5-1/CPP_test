@@ -137,6 +137,8 @@
     <ClInclude Include="include_GUI.h" />
     <ClInclude Include="include_IO.h" />
     <ClInclude Include="include_math.h" />
+    <ClInclude Include="Test_ECS_Inheritance01.h" />
+    <ClInclude Include="Test_Inhertiance_Polymorphism.h" />
     <ClInclude Include="_StyleConventions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

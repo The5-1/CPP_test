@@ -13,20 +13,28 @@
 #include "exercise_forLoops_Functors.h"
 #include "exercise_threading.h"
 #include "Eigen_Test.h"
+#include "Test_Inhertiance_Polymorphism.h"
+#include "Test_ECS_Inheritance01.h"
 
 GLuint BuildShaderProgram(const char *vsPath, const char *fsPath);
 GLuint CreateShader(GLenum eShaderType, const char *strShaderFile);
 
 int main(int argc, char *args[])
 {
+	//Test_Inheritance_Polymorphism::test();
+	Test_ECS_Inheritance01::test();
+
+	/*
 	exercise_interview::testMstring();
 	exercise_forLoops_Functors::test();
 	exercise_lambdas::test();
 	exercise_Memory_Pointers::test();
 	exercise_threading::test();
+	*/
+
 	//--------------------
 
-	 std::cout << std::endl << "================= Eigen Tests ===============" << std::endl;
+	std::cout << std::endl << "================= Eigen Tests ===============" << std::endl;
 	EigenTest::SolveLinearSystem01();
 
 

@@ -19,6 +19,9 @@
     <Filter Include="Header Files\Exercises_Architecture">
       <UniqueIdentifier>{61976162-1edb-4337-8d81-e0114e50003c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Test">
+      <UniqueIdentifier>{4760d203-d003-43f5-910c-2d2194b8200f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -94,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="exercise_inheritance_polymorphism.h">
       <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_Inhertiance_Polymorphism.h">
+      <Filter>Header Files\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_ECS_Inheritance01.h">
+      <Filter>Header Files\Test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
