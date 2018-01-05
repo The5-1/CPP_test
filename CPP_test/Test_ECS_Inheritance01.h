@@ -179,7 +179,7 @@ namespace Test_ECS_Inheritance01
 
 				outList.push_back(current);
 			}
-			return outList;
+			return outList; //stdd:vector will be passed by copy, the copy goes out of scope in the calling scope
 		}
 
 		//void processEntity(Entity* entity, std::function<void()> processingFunction)
@@ -273,7 +273,7 @@ namespace Test_ECS_Inheritance01
 		Entity* BBA = BB->createChild("BBA");
 		Entity* BBB = BB->createChild("BBB");
 		Entity* BBC = BB->createChild("BBC");
-		//scene->iterate();
+		scene->iterate();
 
 		RenderableC* rc = new RenderableC();
 		AA->addComponent(rc);

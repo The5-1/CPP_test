@@ -7,6 +7,26 @@ namespace exercise_Memory_Pointers
 {
 
 /**************************************************
+                       Summary
+---------------------------------------------------
+- always try to use objects rather than pointers!
+- classes allocated with new have all their members on the heap as well
+- class members are always automatic (problem when they are pointers)
+- pointer when:
+--> object needs to outlive it's scope (Class members usually don't need to __outlive their own class__!)
+--> object would fill stack (~1MB)
+- smart pointers make Rule of Three/Five obsolete!
+--> barely ever need for custom destructor/copy/move
+
+
+================ When to use Pointers / dynamic allocation? ===================
+https://stackoverflow.com/questions/22146094/why-should-i-use-a-pointer-rather-than-the-object-itself
+- Pointers are overused! There are only two cases where you NEED them:
+--> the object needs to live on outside the scope
+--> the object would fill the stack
+- std:: containers and smart pointers, should you really require dynamic allocation
+
+
 https://stackoverflow.com/questions/395123/raii-and-smart-pointers-in-c
 ---------------------------------------------------
 Automatic Variables:
@@ -34,6 +54,21 @@ Heap allocation:
 Problem:
 - function returns before destructor is called
 - function throws exception before destructor is called
+
+============= Rule of Zero ============
+---------------------------------------
+https://blog.rmf.io/cxx11/rule-of-zero
+- Rule of Zero:
+--> use std:: smartpointers, no need for custom destructor/copy/move
+--> handling "ownership" should not be the responsibility of a logic class, but of a own "ownership" class --> smartpointers
+- The Rule of Three/Five are barely ever needed!!!
+- Rule of Three: destructor, copy constructor, copy assignment (=)
+--> if you have one, you need all
+- Rule of Five: C++11 ownership movement semantics 
+--> move constructor, move assignment (=), forbid copy constructor and copy assignment
+
+
+
 
 RAII Idea:
 - wrap a stack allocated object arround your heap one
