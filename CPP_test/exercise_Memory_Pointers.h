@@ -12,19 +12,28 @@ namespace exercise_Memory_Pointers
 - always try to use objects rather than pointers!
 - classes allocated with new have all their members on the heap as well
 - class members are always automatic (problem when they are pointers)
+- prefer references over pointers when you pass a object for accessing it
 - pointer when:
 --> object needs to outlive it's scope (Class members usually don't need to __outlive their own class__!)
 --> object would fill stack (~1MB)
 - smart pointers make Rule of Three/Five obsolete!
 --> barely ever need for custom destructor/copy/move
-
+- Pointers when:
+--> accessing polymorphic objects
+--> Forward declaration only works on pointer members
 
 ================ When to use Pointers / dynamic allocation? ===================
 https://stackoverflow.com/questions/22146094/why-should-i-use-a-pointer-rather-than-the-object-itself
 - Pointers are overused! There are only two cases where you NEED them:
---> the object needs to live on outside the scope
---> the object would fill the stack
-- std:: containers and smart pointers, should you really require dynamic allocation
++ the object needs to live on outside the scope
+--> copy/move the object is possible too
++ the object would fill the stack
+--> 1MB default in Visual Studio
+- use std:: containers and smart pointers if you really need dynamic memory
+Pointer when:
+- accessing polymorphic objects
+- optional objects (nullptr) better: std::optional
+- when using pointers you only need a forward declaration
 
 
 https://stackoverflow.com/questions/395123/raii-and-smart-pointers-in-c
