@@ -22,7 +22,8 @@ GLuint CreateShader(GLenum eShaderType, const char *strShaderFile);
 int main(int argc, char *args[])
 {
 	//Test_Inheritance_Polymorphism::test();
-	Test_ECS_Inheritance01::test();
+	//Test_ECS_Inheritance01::test();
+	exercise_interview::testMstring();
 
 	/*
 	exercise_interview::testMstring();
@@ -32,7 +33,12 @@ int main(int argc, char *args[])
 	exercise_threading::test();
 	*/
 
+	cin.get();
+	return 0;
+
 	//--------------------
+
+
 
 	std::cout << std::endl << "================= Eigen Tests ===============" << std::endl;
 	EigenTest::SolveLinearSystem01();

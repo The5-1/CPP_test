@@ -31,6 +31,29 @@ namespace exercise_interview
 		void operator = (const Mstring& m)  //const ref = readonly reference, no cost of copying //reference is const, not content (content should be as well i guess)
 		{
 			name = m.name;
+
+			/*
+			// The C way: https://stackoverflow.com/a/18299183
+			int src[] = { 1, 2, 3, 4 };
+			int dest[4];
+			memcpy(dest, src, 4*sizeof(int)); // int is a POD
+
+			// char* example: https://stackoverflow.com/a/24350094
+			// deleting old char* https://stackoverflow.com/a/1408608
+			*/
+
+			/*
+			//something like
+
+			void operator = (const char* newName)
+			{
+				delete[] this.myName;
+				int length = std::strlen(newName); //strlen is really for char*! //might need +1
+				this.myName = new char[length];
+				memcpy(this.myName, newName, length*sizeof(char)); //sizeof(char) = 1, so its technically not needed
+			}
+			*/
+
 		}
 
 		//stream operator, returns ostream
