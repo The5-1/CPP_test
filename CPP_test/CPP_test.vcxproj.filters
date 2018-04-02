@@ -104,5 +104,8 @@
     <ClInclude Include="Test_ECS_Inheritance01.h">
       <Filter>Header Files\Test</Filter>
     </ClInclude>
+    <ClInclude Include="exercise_implement_smartPointer.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

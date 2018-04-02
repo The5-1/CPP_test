@@ -198,11 +198,23 @@ Heap:
 	void testRAII()
 	{
 		/*
+		================================
+		=             RAII             =
+		================================
 		Scope Bound Ressource Management
+		A programming Technique/Pattern:
+		Bind a "acquired" resources to the lifetime of an object.
+		Applies to anything with "limited supply": allocated heap memory, thread, opened file, locked mutex, disk space
+		Handles the destruction of resources e.g. when early returning or exceptions
+		--------------------------------
+		1.) encapsule resource into a class!
+		2.) use that class only as an automatic instance!
+		--------------------------------
+		Move semantics: transfer the resource owned by the RAII-class to another one
 		--------------------------------
 		RAII = "Resource Acquisition is Initialisation"
-		= RABITS = "Resources are bound irreversibly to scope"
 		= SBRM = "Scope Bound Ressource Management"
+		= RABITS = "Resources are bound irreversibly to scope"
 		http://www.tomdalling.com/blog/software-design/resource-acquisition-is-initialisation-raii-explained/
 		When you heap allocate something and a exception is thrown before the destructur, the distructor wont ever be called
 		Same for opening a file and never closing it.

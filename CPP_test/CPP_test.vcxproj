@@ -121,6 +121,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EventQueue.h" />
     <ClInclude Include="exercise_forLoops_Functors.h" />
+    <ClInclude Include="exercise_implement_smartPointer.h" />
     <ClInclude Include="exercise_inheritance_polymorphism.h" />
     <ClInclude Include="exercise_inlude_forward_typedef.h" />
     <ClInclude Include="exercise_interview.h" />
