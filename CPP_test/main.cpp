@@ -17,6 +17,8 @@
 #include "Test_ECS_Inheritance01.h"
 #include "exercise_implement_smartPointer.h"
 #include "exercise_Stack_Heap.h"
+#include "exercise_inheritance_polymorphism.h"
+#include "exercise_templates.h"
 
 GLuint BuildShaderProgram(const char *vsPath, const char *fsPath);
 GLuint CreateShader(GLenum eShaderType, const char *strShaderFile);
@@ -30,6 +32,9 @@ int main(int argc, char *args[])
 	//exercise_implement_smartPointer::test0();
 
 	exercise_Stack_Heap::test0();
+
+	exercise_inheritance_polymorphism::testVirtual();
+	exercise_templates::test0();
 
 	/*
 	exercise_interview::testMstring();

@@ -12,6 +12,8 @@ namespace exercise_Stack_Heap
 	/* See LGDV C++ Tutorium Slides! */
 
 
+	//C: malloc & free do not call Constructor or Destructor ---> do not use them
+
 	void allocateOnStack()
 	{
 		/* Stack memory
