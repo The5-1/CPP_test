@@ -31,10 +31,12 @@ int main(int argc, char *args[])
 
 	//exercise_implement_smartPointer::test0();
 
-	exercise_Stack_Heap::test0();
+	//exercise_Stack_Heap::test0();
+	
+	//exercise_inheritance_polymorphism::testVirtual();
+	//exercise_templates::test0();
 
-	exercise_inheritance_polymorphism::testVirtual();
-	exercise_templates::test0();
+	exercise_interview::testCharstring();
 
 	/*
 	exercise_interview::testMstring();
