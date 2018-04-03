@@ -129,6 +129,7 @@
     <ClInclude Include="exercise_initializerList.h" />
     <ClInclude Include="exercise_Memory_Pointers.h" />
     <ClInclude Include="exercise_pointer_VS_reference.h" />
+    <ClInclude Include="exercise_Stack_Heap.h" />
     <ClInclude Include="exercise_static_extern_global.h" />
     <ClInclude Include="exercise_templates.h" />
     <ClInclude Include="exercise_threading.h" />

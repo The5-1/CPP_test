@@ -181,16 +181,16 @@ namespace exercise_implement_smartPointer
 				//Take care of the data currently in this shared pointer, since it will be overriden!
 
 				// Since this data will be overriden, decrement the rc count
-				if (this.rc->Release() == 0)
+				if (rc->Release() == 0)
 				{
 					//and if rc become zero and nobody points at this anymore, delete this old data
-					delete this.pData;
-					delete this.rc;
+					delete pData;
+					delete rc;
 				}
 
-				this.pData = other.pData; // Copy the data and rc pointer
-				this.rc = other.rc;
-				this.rc->AddRef(); // and increment the rc count
+				pData = other.pData; // Copy the data and rc pointer
+				rc = other.rc;
+				rc->AddRef(); // and increment the rc count
 			}
 			return *this;
 		}

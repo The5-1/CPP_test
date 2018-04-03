@@ -107,5 +107,8 @@
     <ClInclude Include="exercise_implement_smartPointer.h">
       <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
+    <ClInclude Include="exercise_Stack_Heap.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
