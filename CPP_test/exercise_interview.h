@@ -7,13 +7,31 @@ using namespace std;
 
 namespace exercise_interview
 {
+	//Custom String Class Exercise
 	//http://www.cplusplus.com/doc/tutorial/ntcs/
 	//https://stackoverflow.com/questions/16511706/simple-string-implementation-in-c
 	//https://stackoverflow.com/questions/18693866/how-to-interpret-operator-const-char-in-operator-overloading
 
+	// Rule of Three
+	// https://stackoverflow.com/questions/4172722/what-is-the-rule-of-three
+	// Destructor, Copy Constructor, Copy Assingment Operatro (=)
+
+	// Copy and Swap idiom (Rule of Three and a half)
+	// https://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom !!!
+	// std::swap since c++98
+	// Make the assignment operator re-use copy constructor and destructor!
+	// * create a copy via copy constructor (use inplicit copy by pass-by-value)
+	// * create a "swap()" function to change out your data with the copy
+	// * destruct the copy
 
 
-	//Boilerplate code, could pull out the whole char assignment stuff into a helper function
+	// Move Semantics (C++11, MoveConstructor)  (Rule of 5 in C++11)
+	//string example: https://stackoverflow.com/questions/3106110/what-are-move-semantics
+
+	//Friend VS Static Method
+	//https://stackoverflow.com/questions/2315166/where-would-you-use-a-friend-function-vs-a-static-member-function
+
+
 
 	class CharString 
 	{
@@ -22,6 +40,7 @@ namespace exercise_interview
 
 	public:
 
+
 		//default constructor
 		CharString()
 		{
@@ -29,10 +48,16 @@ namespace exercise_interview
 			chars[0] = '\0';
 		}
 
+		//destructor
+		~CharString()
+		{
+			delete[] chars;
+		}
+
 		//constructor that gets passed a string literal
 		CharString(char* text)
 		{
-			int length = strlen(text)+1;  // +1 for the \0
+			int length = strlen(text)+1;  // +1 for the "\0" C-String terminator ("null-character")
 			chars = new char[length];
 			strcpy(chars, text);
 		}
@@ -40,23 +65,10 @@ namespace exercise_interview
 		//Copy Constructor
 		CharString(const CharString& other)
 		{
-			delete[] this->chars; //delete old value
 			int length = strlen(other.chars)+1; //can actually access private members in copy constructor!
 			chars = new char[length];
-			strcpy(chars, other.chars);
+			strcpy(chars, other.chars); //strcpy is like memcpy but it ends at \0 automatically instead of expecting a length parameter
 		}
-
-		
-		//destructor
-		~CharString()
-		{
-			if (chars != nullptr)
-			{
-				if (strlen(chars) > 1) delete[] chars;
-				else delete chars;
-			}
-		}
-		
 
 		//implicit conversion operator (explicit keyword for explicit)
 		//this can cause issues eg with a = b, both are treated as char* pointer and a points to the same obejct as b afterwards
@@ -65,19 +77,51 @@ namespace exercise_interview
 			return (this->chars);
 		}
 
+		//Rule of Three and a Half, (Copy and Swap Idiom)
+		friend void swap(CharString& first, CharString& second) //friend defines a function outside this class that got access to private members still (like static, but not scoped to the class at all)
+		{
+			//swap the members
+			std::swap(first.chars, second.chars); //using
+		}
+
+		// Copy Assigment Operator
 		// the existence of the = operator prevents a = b becoming char* = char* due to implicit conversion
+#if 0
+		//Copy Assigment Operator (brute force implementation)
 		CharString& operator =(const CharString& other)
 		{
 
+
 			if (this != &other) //compare with adress of other
 			{
-				delete[] this->chars; //delete old value
+				delete[] this->chars; //delete old value //!at this moment we geta problem if an exception occurs in the following code
 				int length = strlen(other.chars) + 1; //can actually access private members in copy constructor!
-				chars = new char[length];
+				chars = new char[length]; //if an exception occurs here, we have already deleted our current data :(
 				strcpy(chars, other.chars);
 			}
 			return *this; //return dereference of this
 		}
+#elif 0
+		//Copy Assignment via "Copy and Swap" (done naively)
+		CharString& operator = (CharString& other) //pass by reference
+		{
+			CharString tmp(other); //utilize copy constructor to make a copy
+			swap(*this, other); //swap them
+
+			return *this;
+			//local tmp is deleted at end of scope
+		}
+#else
+
+		//Copy Assignment via "Copy and Swap" (optimized)
+		CharString& operator = (CharString other) //pass by value directly --> compiler creates copy! 
+		{
+			swap(*this, other); //friend void swap is not a member function, but technically a global one with private access
+			return *this;
+		}
+
+#endif
+
 
 		// b = "byebye" could cause a memory leak, so i ovearload the assigment to char* to do the cleanup too
 		CharString& operator =(const char* other)
@@ -88,6 +132,11 @@ namespace exercise_interview
 			strcpy(chars, other);
 			return *this; //return dereference of this
 		}
+
+
+
+
+
 	};
 
 
@@ -118,6 +167,9 @@ namespace exercise_interview
 
 		cout << "Result:" << endl;
 		cout << "a: " << a << ", b: " << b << ", c: " << c << endl << endl;
+
+
+
 
 		cout << "-------------------------" << endl;
 
