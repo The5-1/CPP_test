@@ -8,11 +8,13 @@ using namespace std;
 namespace exercise_interview
 {
 	//Custom String Class Exercise
+	// https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)#Example_in_C++ C++ code for custom string class with rule of five
 	//http://www.cplusplus.com/doc/tutorial/ntcs/
 	//https://stackoverflow.com/questions/16511706/simple-string-implementation-in-c
 	//https://stackoverflow.com/questions/18693866/how-to-interpret-operator-const-char-in-operator-overloading
 
 	// Rule of Three
+	// https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)
 	// https://stackoverflow.com/questions/4172722/what-is-the-rule-of-three
 	// Destructor, Copy Constructor, Copy Assingment Operatro (=)
 
@@ -266,6 +268,70 @@ namespace exercise_interview
 		//printf(c); //printf cant be overloaded!
 	}
 
+
+	class MyString_RuleOfFive
+	{
+	public:
+		//source: https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)#Example_in_C++
+
+		/** Default constructor */
+		MyString_RuleOfFive() :
+			data(new char[14])
+		{
+			std::strcpy(data, "Hello, World!");
+		}
+
+		/** Copy constructor */
+		MyString_RuleOfFive(const MyString_RuleOfFive& other) :
+			data(new char[std::strlen(other.data) + 1])
+		{
+			std::strcpy(data, other.data);
+		}
+
+		/** Move constructor */
+		MyString_RuleOfFive(MyString_RuleOfFive&& other) noexcept : /* noexcept needed to enable optimizations in containers */
+		data(other.data)
+		{
+			other.data = nullptr;
+		}
+
+		/** Destructor */
+		~MyString_RuleOfFive() noexcept /* explicitly specified destructors should be annotated noexcept as best-practice */
+		{
+			delete[] data;
+		}
+
+		/** Copy assignment operator */
+		MyString_RuleOfFive& operator= (const MyString_RuleOfFive& other)
+		{
+			MyString_RuleOfFive tmp(other);         // re-use copy-constructor
+			*this = std::move(tmp); // re-use move-assignment
+			return *this;
+		}
+
+		/** Move assignment operator */
+		MyString_RuleOfFive& operator= (MyString_RuleOfFive&& other) noexcept
+		{
+			if (this == &other)
+			{
+				// take precautions against `foo = std::move(foo)`
+				return *this;
+			}
+			delete[] data;
+			data = other.data;
+			other.data = nullptr;
+			return *this;
+		}
+
+	private:
+		friend std::ostream& operator<< (std::ostream& os, const MyString_RuleOfFive& foo)
+		{
+			os << foo.data;
+			return os;
+		}
+
+		char* data;
+	};
 
 
 
