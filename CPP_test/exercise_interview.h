@@ -7,8 +7,12 @@ using namespace std;
 
 namespace exercise_interview
 {
-	//Custom String Class Exercise
+	//This whole string class example is the go-to example for the Rule of Three
+	// http://en.cppreference.com/w/cpp/language/rule_of_three
 	// https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)#Example_in_C++ C++ code for custom string class with rule of five
+
+
+	//Custom String Class Exercise
 	//http://www.cplusplus.com/doc/tutorial/ntcs/
 	//https://stackoverflow.com/questions/16511706/simple-string-implementation-in-c
 	//https://stackoverflow.com/questions/18693866/how-to-interpret-operator-const-char-in-operator-overloading
@@ -105,17 +109,16 @@ namespace exercise_interview
 		}
 #elif 0
 		//Copy Assignment via "Copy and Swap" (done naively)
-		CharString& operator = (CharString& other) //pass by reference
+		CharString& operator = (const CharString& other) //pass by reference
 		{
 			CharString tmp(other); //utilize copy constructor to make a copy
-			swap(*this, other); //swap them
-
+			swap(*this, tmp); //swap with the copy
 			return *this;
-			//local tmp is deleted at end of scope
+			//local copy is deleted at end of scope
 		}
 #else
 
-		//Copy Assignment via "Copy and Swap" (optimized)
+		//Copy Assignment via "Copy and Swap" (optimized with automatic copy)
 		CharString& operator = (CharString other) //pass by value directly --> compiler creates copy! 
 		{
 			swap(*this, other); //friend void swap is not a member function, but technically a global one with private access
