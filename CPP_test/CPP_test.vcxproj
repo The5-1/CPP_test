@@ -128,6 +128,7 @@
     <ClInclude Include="exercise_lambdas.h" />
     <ClInclude Include="exercise_initializerList.h" />
     <ClInclude Include="exercise_Memory_Pointers.h" />
+    <ClInclude Include="exercise_OpenGL_minimal.h" />
     <ClInclude Include="exercise_pointer_VS_reference.h" />
     <ClInclude Include="exercise_Stack_Heap.h" />
     <ClInclude Include="exercise_static_extern_global.h" />

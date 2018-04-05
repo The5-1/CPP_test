@@ -110,5 +110,8 @@
     <ClInclude Include="exercise_Stack_Heap.h">
       <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
+    <ClInclude Include="exercise_OpenGL_minimal.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

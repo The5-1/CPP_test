@@ -53,15 +53,20 @@ namespace exercise_OpenGL_minimal
 		//activate the shader
 		glUseProgram(program);
 
-		//draw
-		glEnableVertexAttribArray(0); //layout location
+		//Set Uniforms
+		glUniform3fv(glGetUniformLocation(program, uniformName.c_str()), 1, &vec3value[0]);
+		glUniform3f(glGetUniformLocation(program, uniformName.c_str()), x, y, z);
+
+		//Bind attributes
+		glEnableVertexAttribArray(0); //layout location 0
 		glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
-		glEnableVertexAttribArray(1); //layout location
+		glEnableVertexAttribArray(1); //layout location 1
 		glBindBuffer(GL_ARRAY_BUFFER, vbo[1]);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
+		//draw
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo[2]);
 		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0); //GL_Lines etc!
 
