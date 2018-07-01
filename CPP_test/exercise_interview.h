@@ -7,6 +7,11 @@ using namespace std;
 
 namespace exercise_interview
 {
+	// Rule of Three
+	// https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)
+	// https://stackoverflow.com/questions/4172722/what-is-the-rule-of-three
+	// Destructor, Copy Constructor, Copy Assingment Operatro (=)
+
 	//This whole string class example is the go-to example for the Rule of Three
 	// http://en.cppreference.com/w/cpp/language/rule_of_three
 	// https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)#Example_in_C++ C++ code for custom string class with rule of five
@@ -17,10 +22,6 @@ namespace exercise_interview
 	//https://stackoverflow.com/questions/16511706/simple-string-implementation-in-c
 	//https://stackoverflow.com/questions/18693866/how-to-interpret-operator-const-char-in-operator-overloading
 
-	// Rule of Three
-	// https://en.wikipedia.org/wiki/Rule_of_three_(C%2B%2B_programming)
-	// https://stackoverflow.com/questions/4172722/what-is-the-rule-of-three
-	// Destructor, Copy Constructor, Copy Assingment Operatro (=)
 
 	// Copy and Swap idiom (Rule of Three and a half)
 	// https://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom !!!
@@ -71,9 +72,9 @@ namespace exercise_interview
 		//Copy Constructor
 		CharString(const CharString& other)
 		{
-			int length = strlen(other.chars)+1; //can actually access private members in copy constructor!
-			chars = new char[length];
-			strcpy(chars, other.chars); //strcpy is like memcpy but it ends at \0 automatically instead of expecting a length parameter
+			int length = strlen(other.chars)+1; //can access private members of the other object since its the same class
+			chars = new char[length]; //accquire new memory
+			strcpy(chars, other.chars); //strcpy is like memcpy but it ends AFTER the '\0' automatically (instead of expecting a length parameter)
 		}
 
 		//implicit conversion operator (explicit keyword for explicit)
@@ -335,7 +336,6 @@ namespace exercise_interview
 
 		char* data;
 	};
-
 
 
 	/*

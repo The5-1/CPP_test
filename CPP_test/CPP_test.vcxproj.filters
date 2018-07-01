@@ -27,6 +27,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include_math.h">
@@ -111,6 +114,12 @@
       <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
     <ClInclude Include="exercise_OpenGL_minimal.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exercise_interview2.h">
       <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
   </ItemGroup>

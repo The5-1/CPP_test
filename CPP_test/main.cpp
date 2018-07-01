@@ -7,6 +7,7 @@
 //#include "include_GUI.h"
 
 #include "exercise_interview.h"
+#include "exercise_interview2.h"
 #include "exercise_initializerList.h"
 #include "exercise_lambdas.h"
 #include "exercise_Memory_Pointers.h"
@@ -37,6 +38,9 @@ int main(int argc, char *args[])
 	//exercise_templates::test0();
 
 	exercise_interview::testCharstring();
+
+	//exercise_interview2::test_CustomString();
+	exercise_interview2::test_C_Pointer();
 
 	/*
 	exercise_interview::testMstring();
