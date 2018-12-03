@@ -122,5 +122,8 @@
     <ClInclude Include="exercise_interview2.h">
       <Filter>Header Files\Exercises_Cpp</Filter>
     </ClInclude>
+    <ClInclude Include="String2D.h">
+      <Filter>Header Files\Exercises_Cpp</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

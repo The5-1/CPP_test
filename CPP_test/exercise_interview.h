@@ -93,7 +93,7 @@ namespace exercise_interview
 
 		// Copy Assigment Operator
 		// the existence of the = operator prevents a = b becoming char* = char* due to implicit conversion
-#if 0
+#if 1
 		//Copy Assigment Operator (brute force implementation)
 		CharString& operator =(const CharString& other)
 		{
@@ -122,7 +122,7 @@ namespace exercise_interview
 		//Copy Assignment via "Copy and Swap" (optimized with automatic copy)
 		CharString& operator = (CharString other) //pass by value directly --> compiler creates copy! 
 		{
-			swap(*this, other); //friend void swap is not a member function, but technically a global one with private access
+			::swap(*this, other); //friend void swap is not a member function, but technically a global one with private access
 			return *this;
 		}
 

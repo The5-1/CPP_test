@@ -12,7 +12,7 @@ namespace exercise_interview2
 	Q: Determine side of a point to a plane defined by a point and normal:
 	A: Dot-Product of point-to-point and normal.
 
-	Q: Invert toration matrix:
+	Q: Invert rotation matrix:
 	A: Transpose = Iverse (since rotations are orthogonal-matrices).
 
 	Q: Phong:
@@ -25,10 +25,10 @@ namespace exercise_interview2
 	A: Bounding box min/max, half dimensions of that, compare bigger or smaller than those hales, this gives the octree cell
 
 	Q: KD-tree:
-	A: Boxes are halfed so that halfe of the points os distributed per cell. Axis of the "cut" is chosen e.g. at random
+	A: Boxes are halfed so that half of the points os distributed per cell. Axis of the "cut" is chosen e.g. at random
 
 	Q: Interpolate rotations:
-	A: Use Spherical interpolation based on quaternions (quaternion is mat4 instead of mat3)
+	A: Use Spherical interpolation based on quaternions (quaternion is mat4 instead of mat3 and can be linearly interpolated)
 
 	Other Stuff:
 	SVM: Linear divider for data set with 2 types

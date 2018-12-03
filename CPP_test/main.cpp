@@ -21,6 +21,8 @@
 #include "exercise_inheritance_polymorphism.h"
 #include "exercise_templates.h"
 
+#include "String2D.h"
+
 GLuint BuildShaderProgram(const char *vsPath, const char *fsPath);
 GLuint CreateShader(GLenum eShaderType, const char *strShaderFile);
 
@@ -37,10 +39,11 @@ int main(int argc, char *args[])
 	//exercise_inheritance_polymorphism::testVirtual();
 	//exercise_templates::test0();
 
-	exercise_interview::testCharstring();
+	//exercise_interview::testCharstring();
+	//exercise_interview::testCharstring();
 
 	//exercise_interview2::test_CustomString();
-	exercise_interview2::test_C_Pointer();
+	//exercise_interview2::test_C_Pointer();
 
 	/*
 	exercise_interview::testMstring();
@@ -49,6 +52,8 @@ int main(int argc, char *args[])
 	exercise_Memory_Pointers::test();
 	exercise_threading::test();
 	*/
+	
+	String2Dtest::test01();
 
 	cin.get();
 	return 0;
